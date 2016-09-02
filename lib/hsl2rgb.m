@@ -36,10 +36,10 @@ for i=1:size(hsl,1),
     temp3(2)=hsl(i,1);
     temp3(3)=hsl(i,1)-1/3;
     for j=1:3,
-        if temp3(j)>1, 
-            temp3(j)=temp3(j)-1; 
-        elseif temp3(j)<0, 
-            temp3(j)=temp3(j)+1; 
+        if temp3(j)>1,
+            temp3(j)=temp3(j)-1;
+        elseif temp3(j)<0,
+            temp3(j)=temp3(j)+1;
         end;
         if 6*temp3(j)<1,
             rgb(i,j)=temp1+(temp2-temp1)*6*temp3(j);

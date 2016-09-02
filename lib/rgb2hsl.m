@@ -27,8 +27,8 @@ for i=1:size(rgb,1),
     mn=min(rgb(i,:));%min of the 3 colors
     imx=find(rgb(i,:)==mx);%which color has the max
     hsl(i,3)=(mx+mn)/2;%luminance is half of max value + min value
-    if(mx-mn)==0,%if all three colors have same value, 
-        hsl(i,2)=0;%then s=0 and 
+    if(mx-mn)==0,%if all three colors have same value,
+        hsl(i,2)=0;%then s=0 and
         hsl(i,1)=0;%h is undefined but for practical reasons 0
         return;
     end;
@@ -38,12 +38,12 @@ for i=1:size(rgb,1),
         hsl(i,2)=(mx-mn)/(2-(mx+mn));
     end;
     switch(imx(1))%if two colors have same value and be the maximum, use the first color
-    case 1 %Red is the max color
-        hsl(i,1)=((rgb(i,2)-rgb(i,3))/(mx-mn))/6;
-    case 2 %Green is the max color
-        hsl(i,1)=(2+(rgb(i,3)-rgb(i,1))/(mx-mn))/6;
-    case 3 %Blue is the max color
-        hsl(i,1)=(4+(rgb(i,1)-rgb(i,2))/(mx-mn))/6;
+        case 1 %Red is the max color
+            hsl(i,1)=((rgb(i,2)-rgb(i,3))/(mx-mn))/6;
+        case 2 %Green is the max color
+            hsl(i,1)=(2+(rgb(i,3)-rgb(i,1))/(mx-mn))/6;
+        case 3 %Blue is the max color
+            hsl(i,1)=(4+(rgb(i,1)-rgb(i,2))/(mx-mn))/6;
     end;
     if hsl(i,1)<0,hsl(i,1)=hsl(i,1)+1;end;%if hue is negative, add 1 to get it within 0 and 1
 end;
