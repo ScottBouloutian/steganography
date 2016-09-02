@@ -15,4 +15,4 @@ The algorithm hides text in the form of binary data within the luminance channel
 ### Error correction
 Because error correction is utilized in the decoding process, the stego image may be modified to some extend without affecting the ability to retrieve the secret message. Below you can see a modified stego image with its secret message intact.
 
-![Cover Image](https://github.com/ScottBouloutian/steganography/blob/master/examples/stego_modified.jpg)
+![Cover Image](https://github.com/ScottBouloutian/steganography/blob/master/examples/stego_modified.png)
